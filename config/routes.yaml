@@ -1,3 +1,9 @@
+# config/routes.yaml
+
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+product_cntrl:
+    path: /product
+    controller: App\Controller\ProductController::createProduct
