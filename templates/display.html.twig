@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %} 
+{% block stylesheets %} 
+   <style> 
+      .table { border-collapse: collapse; width:100%; }
+      .table th, td {
+         width:auto;
+         text-align: left; 
+         align: left;
+         border-collapse: collapse;
+      }
+      th, td {
+         padding: 10px;
+         text-align: left;
+      }
+      table#t01 tr:nth-child(even) {
+         background-color: #eee;
+      }
+      table#t01 tr:nth-child(odd) {
+         background-color: #fff;
+      }
+      table#t01 th {
+         background-color: #7f00ff;
+         color: white;
+      }
+   </style> 
+{% endblock %}  
+{% block body %} 
+   <h1 style="color: #7f00ff">Магазин электроники</h1>
+   <table class = "table" id = t01>
+      <tr>  
+         <th style="width: 20px;">Id</th>
+         <th>Название</th>
+         <th>Описание</th>
+         <th>Цена</th>
+         <th></th>
+         <th></th>
+      </tr>  
+      {% for x in data %} 
+      <tr>  
+         <td>{{ x.id }}</td>
+         <td>{{ x.Name }}</td>
+         <td>{{ x.Description }}</td>
+         <td>{{ x.Price }}</td>
+         <td><a href = "{{ path('shop_update', { 'id' : x.Id }) }}">Изменить</a></td>
+         <td><a href = "{{ path('shop_delete', { 'id' : x.Id }) }}">Удалить</a></td>
+      </tr>  
+      {% endfor %} 
+   </table> 
+{% endblock %}  
