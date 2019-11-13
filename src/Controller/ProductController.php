@@ -10,15 +10,13 @@ use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
-
 use Symfony\Component\HttpFoundation\Request;
-
 use Doctrine\ORM\Query;
 
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product/{id}", name="product_show")
+     * @Route("/shop/product/{id}", name="product_show")
      */
     public function show($id)
     {
@@ -32,7 +30,7 @@ class ProductController extends AbstractController
             );
         }
 
-        return new Response('Check out this great product: '.$product->getName());
+        return new Response('Просмотр продукта: '.$product->getName().' '.$product->getDescription().' Цена: '.$product->getPrice());
     }
     //test
     /**

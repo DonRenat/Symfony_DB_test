@@ -18,7 +18,7 @@
       }
       table#t01 tr:nth-child(odd) {
          background-color: #fff;
-         color: #5eb5e0;
+         color: #7cc6ff;
       }
       table#t01 th {
          background-color: #7f00ff;
@@ -39,7 +39,7 @@
       </tr>  
       {% for x in data %} 
       <tr>  
-         <td>{{ x.id }}</td>
+         <td><a href="{{ path('product_show', { 'id' : x.Id }) }}">{{ x.id }}</td>
          <td>{{ x.Name }}</td>
          <td>{{ x.Description }}</td>
          <td>{{ x.Price }}</td>
