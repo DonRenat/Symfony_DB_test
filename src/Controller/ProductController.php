@@ -32,7 +32,6 @@ class ProductController extends AbstractController
 
         return new Response('Просмотр продукта: '.$product->getName().' '.$product->getDescription().' Цена: '.$product->getPrice());
     }
-    //test
     /**
      * @Route("/shop/id")
      */
